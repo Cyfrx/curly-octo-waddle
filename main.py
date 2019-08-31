@@ -11,8 +11,7 @@ class PiDisplay:
         self.display.AddText("testing", 0, 0, size=12, Id="lineOne")
         self.display.WriteAll()
         # self.display.AddImg(os.path.join(DIRECTORY, 'test', 'images', self.placeholder),0,0, (100,100), Id = "prototype")
-        self.display.AddImg(os.path.join(
-            DIRECTORY, 'images', 'weather', self.placeholder), 1, 63, (32, 32), Id="ForecastIconOne")
+        self.display.AddImg(self.placeholder, 1, 63, (32, 32), Id="ForecastIconOne")
 
 PI = PiDisplay()
 
