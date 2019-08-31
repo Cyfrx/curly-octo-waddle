@@ -1,17 +1,17 @@
+import os
+
 from papirus import PapirusComposite
 
 class PiDisplay:
 
-    def initialize_display(self):
-        self.display.WriteAll()
-
-
     def update(self):
         self.display = PapirusComposite(False)
-        self.initialize_display()
-        self.display.AddText("testing")
+        self.display.AddText("testing", 0, 0, size=12, Id="lineOne")
+        self.display.WriteAll()
 
 PI = PiDisplay()
 
-while True:
-    PI.update()
+
+PI.update()
+# while True:
+#     PI.update()
