@@ -43,7 +43,7 @@ class PiDisplay:
         x = response.json()
         y = x["main"]
         w = x["weather"]
-        desc = w["description"]
+        desc = w[0]
         current_temperature = y["temp"]
         americanunits = (9/5) * (current_temperature - 273.15) + 32
         current_temperature = americanunits
@@ -51,7 +51,7 @@ class PiDisplay:
 
         self.display = PapirusComposite(False)
         self.display.AddText('Degrees: ' + str(current_temperature), 0, 0, size=12, Id="lineOne")
-        self.display.AddText("HORTLER", 20, 60, size=16, Id="lin2ne")
+        self.display.AddText(desc, 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, 'test', 'images', self.placeholder),0,0, (100,100), Id = "prototype")
         # self.display.AddImg(os.path.join(), 1, 63, (32, 32), Id="ForecastIconOne")
