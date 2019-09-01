@@ -50,7 +50,8 @@ class PiDisplay:
         self.display.AddText("Degrees: " + str(current_temperature), 0, 0, size=12, Id="lineOne")
         self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
-        self.display.AddImg(os.path.join(DIRECTORY, 'curly-octo-waddle', self.placeholder),0,0, (100,100), Id = "testimg")
+        # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
+        self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.img'), 1, 63, (32, 32), Id="ForecastIconOne")
         # self.display.AddImg(os.path.join(), 1, 63, (32, 32), Id="ForecastIconOne")
         self.display.WriteAll()
 
