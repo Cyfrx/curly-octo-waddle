@@ -32,6 +32,8 @@ complete_url = base_url + "appid=" + api_key + "&q=" + city_name
 
 DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
+# 200x96 resolution
+
 class PiDisplay:
 
     def update(self):
@@ -51,7 +53,8 @@ class PiDisplay:
         self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
-        self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.img'), 1, 63, (32, 32), Id="ForecastIconOne")
+        self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.jpg'), 168, 28, (32, 32), Id="ForecastIconOne")
+        self.display.AddImg(os.path.join(DIRECTORY, 'maplearu.png'), 168, 64, (32, 32), Id="ForecastIconOne")
         # self.display.AddImg(os.path.join(), 1, 63, (32, 32), Id="ForecastIconOne")
         self.display.WriteAll()
 
