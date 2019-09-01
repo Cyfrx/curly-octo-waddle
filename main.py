@@ -30,7 +30,7 @@ complete_url = base_url + "appid=" + api_key + "&q=" + city_name
 # python format data
 # x = response.json()
 
-DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+DIRECTORY = os.path.dirname(__file__)
 
 
 
@@ -53,7 +53,7 @@ class PiDisplay:
         self.display.AddText("Degrees: " + str(current_temperature), 0, 0, size=12, Id="lineOne")
         self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
-        # self.display.AddImg(os.path.join(DIRECTORY, 'test', 'images', self.placeholder),0,0, (100,100), Id = "prototype")
+        self.display.AddImg(os.path.join(DIRECTORY, self.placeholder),0,0, (100,100), Id = "testimg")
         # self.display.AddImg(os.path.join(), 1, 63, (32, 32), Id="ForecastIconOne")
         self.display.WriteAll()
 
