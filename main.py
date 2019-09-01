@@ -34,6 +34,9 @@ DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 # 200x96 resolution
 
+# example for accessing files in same directory as main.py
+# self.display.AddImg(os.path.join(DIRECTORY, 'maplearu.jpg'), 168, 20, (32, 32), Id="ForecaaastIconOne")
+
 class PiDisplay:
 
     def update(self):
@@ -48,8 +51,13 @@ class PiDisplay:
         current_temperature = americanunits
         #end of API interaction
 
+
+
         self.display = PapirusComposite(False)
-        self.display.AddText("Degrees: " + str(current_temperature), 0, 0, size=12, Id="lineOne")
+        condition_icon = w[0]['icon']
+        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), 0, 0, (32, 32))
+        self.display.AddText(str(round(current_temperature)) + ' ℉', 34, 0, size=32)
+
         self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
@@ -61,10 +69,13 @@ class PiDisplay:
 
 
 
+
+
+
 PI = PiDisplay()
 
 
 PI.update()
 while True:
-    sleep(10)
+    sleep(60)
     PI.update()
