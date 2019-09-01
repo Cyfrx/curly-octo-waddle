@@ -42,8 +42,8 @@ class PiDisplay:
         response = requests.get(complete_url)
         x = response.json()
         y = x["main"]
-        ui = x["weather"]
-        z = ui["description"]
+        weath = x["weather"]
+        z = weath[2]
         current_temperature = y["temp"]
         americanunits = (9/5) * (current_temperature - 273.15) + 32
         current_temperature = americanunits
