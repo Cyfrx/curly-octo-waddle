@@ -43,7 +43,7 @@ class PiDisplay:
         x = response.json()
         y = x["main"]
         w = x["weather"]
-        desc = w['weather']
+        desc = w[0]['description']
         current_temperature = y["temp"]
         americanunits = (9/5) * (current_temperature - 273.15) + 32
         current_temperature = americanunits
