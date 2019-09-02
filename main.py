@@ -77,5 +77,5 @@ PI = PiDisplay()
 
 PI.update()
 while True:
-    sleep(60)
+    sleep(60*20)
     PI.update()
