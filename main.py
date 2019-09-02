@@ -55,14 +55,14 @@ class PiDisplay:
 
         self.display = PapirusComposite(False)
         condition_icon = w[0]['icon']
-        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), 0, 0, (32, 32), Id='test')
-        self.display.AddText(str(round(current_temperature)) + ' ℉', 34, 0, size=32)
+        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -32, -32, (64, 64))
+        self.display.AddText(str(round(current_temperature)) + ' ℉', 34, 0, size=16)
 
         self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
-        self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.jpg'), 168, 64, (32, 32), Id="ForecastIconOne")
-        self.display.AddImg(os.path.join(DIRECTORY, 'maplearu.jpg'), 168, 20, (32, 32), Id="ForecaaastIconOne")
+        self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.jpg'), 168, 64, (32, 32))
+        self.display.AddImg(os.path.join(DIRECTORY, 'maplearu.jpg'), 168, 20, (32, 32))
         # self.display.AddImg(os.path.join(), 1, 63, (32, 32), Id="ForecastIconOne")
         self.display.WriteAll()
 
