@@ -46,6 +46,8 @@ class PiDisplay:
         y = x["main"]
         w = x["weather"]
         desc = w[0]['description']
+        temp_min = y['temp_min']
+        temp_max = y['temp_max']
         current_temperature = y["temp"]
         americanunits = (9/5) * (current_temperature - 273.15) + 32
         current_temperature = americanunits
@@ -55,10 +57,11 @@ class PiDisplay:
 
         self.display = PapirusComposite(False)
         condition_icon = w[0]['icon']
-        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -32, -32, (64, 64))
-        self.display.AddText(str(round(current_temperature)) + ' ℉', 34, 0, size=16)
+        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -5, -5, (40, 40))
+        self.display.AddText(str(round(current_temperature)) + ' ℉', 25, 0, size=12)
+        self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_min)) + ' ℉', 25, 14, size=12)
 
-        self.display.AddText(str(desc), 20, 60, size=16, Id="lin2ne")
+        self.display.AddText(str(desc), 20, 40, size=12, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
         self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.jpg'), 168, 64, (32, 32))
