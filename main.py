@@ -65,7 +65,7 @@ class PiDisplay:
         self.display.AddText(str(round(current_temperature)) + ' ℉', 30, 5, size=12)
         self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_min)) + ' ℉', 30, 20, size=12)
 
-        self.display.AddText(str(desc), 35, 35, size=12, Id="lin2ne")
+        self.display.AddText(str(desc), 55, 5, size=10, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
         # self.display.AddImg(os.path.join(DIRECTORY, self.unknown_icon),0,0, (100,100), Id = "testimg")
         self.display.AddImg(os.path.join(DIRECTORY, 'placeholder.jpg'), 168, 64, (32, 32))
