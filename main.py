@@ -50,16 +50,20 @@ class PiDisplay:
         temp_max = y['temp_max']
         current_temperature = y["temp"]
         americanunits = (9/5) * (current_temperature - 273.15) + 32
+        americanunits_min = (9/5) * (temp_min - 273.15) + 32
+        americanunits_max = (9/5) * (temp_max - 273.15) + 32
         current_temperature = americanunits
+        temp_min = americanunits_min
+        temp_max = americanunits_max
         #end of API interaction
 
 
 
         self.display = PapirusComposite(False)
         condition_icon = w[0]['icon']
-        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -5, -5, (40, 40))
-        self.display.AddText(str(round(current_temperature)) + ' ℉', 25, 0, size=12)
-        self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_min)) + ' ℉', 25, 14, size=12)
+        self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -5, -10, (40, 40))
+        self.display.AddText(str(round(current_temperature)) + ' ℉', 30, 5, size=12)
+        self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_min)) + ' ℉', 30, 20, size=12)
 
         self.display.AddText(str(desc), 20, 40, size=12, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
