@@ -63,7 +63,7 @@ class PiDisplay:
         condition_icon = w[0]['icon']
         self.display.AddImg(os.path.join(DIRECTORY, 'weather_condition_icons', condition_icon + '@2x.png'), -5, -5, (40, 40))
         self.display.AddText(str(round(current_temperature)) + ' ℉', 30, 5, size=12)
-        self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_min)) + ' ℉', 30, 20, size=12)
+        self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_max)) + ' ℉', 30, 20, size=12)
 
         self.display.AddText(str(desc), 70, 5, size=10, Id="lin2ne")
         # self.display.AddText(z, 20, 190, size = 16, Id = "test")
