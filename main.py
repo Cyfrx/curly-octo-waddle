@@ -61,7 +61,7 @@ class PiDisplay:
 
         self.display = PapirusComposite(False)
         condition_icon = w[0]['icon']
-        self.display.AddImg(os.path.join(DIRECTORY, 'weather icons', condition_icon), -5, -5, (40, 40))
+        self.display.AddImg(os.path.join(DIRECTORY, 'weather icons', condition_icon + '.png'), -5, -5, (40, 40))
         self.display.AddText(str(round(current_temperature)) + ' ℉', 30, 5, size=12)
         self.display.AddText(str(round(temp_min)) + '/' + str(round(temp_max)) + ' ℉', 30, 20, size=12)
 
